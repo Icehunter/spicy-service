@@ -1,0 +1,9 @@
+.next/*
+.storybook/*
+coverage/*
+docs/*
+node_modules/*
+out/*
+types/*
+
+*.json

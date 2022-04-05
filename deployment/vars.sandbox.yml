@@ -1,0 +1,5 @@
+# service
+NodeEnv: sandbox
+NodeConfigEnv: sandbox
+# service & bg-common
+HostName: spicy-service.sandbox.spicy.com

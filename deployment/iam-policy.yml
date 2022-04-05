@@ -1,0 +1,22 @@
+Version: 2012-10-17
+Statement:
+  - Effect: Allow
+    Action:
+      - ecr:GetAuthorizationToken
+      - ecr:BatchCheckLayerAvailability
+      - ecr:GetDownloadUrlForLayer
+      - ecr:BatchGetImage
+      - logs:CreateLogStream
+      - logs:PutLogEvents
+    Resource: "*"
+  - Effect: Allow
+    Action:
+      - kms:Decrypt
+      - secretsmanager:GetSecretValue
+      - ssm:GetParametersByPath
+      - ssm:GetParameters
+      - ssm:GetParamete
+    Resource:
+      - "arn:aws:kms:*:{{ ID }}:key/*"
+      - "arn:aws:secretsmanager:*:{{ ID }}:secret:*"
+      - "arn:aws:ssm:*:{{ ID }}:parameter/*"

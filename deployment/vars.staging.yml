@@ -1,0 +1,10 @@
+# service
+NodeEnv: staging
+NodeConfigEnv: staging
+DesiredCount: 4
+MinSAacity: 4
+MaxSAacity: 24
+CPU: 1024
+Memory: 2048
+# service & bg-common
+HostName: spicy-service.staging.spicy.com

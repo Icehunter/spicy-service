@@ -1,0 +1,33 @@
+# See https://help.github.com/ignore-files/ for more about ignoring files.
+
+# dependencies
+node_modules/
+
+# testing
+coverage/
+
+# production
+.git/
+.github/
+.next/
+.vscode/
+jenkins-hooks/
+ansible/
+out/
+.dockerignore
+
+# misc
+.DS_Store
+.env
+*.log*
+Dockerfile
+
+# jenkins stuff...
+.git_commit.sha
+.scannerwork/
+jenkins-deploy/
+sc.log
+sc_client.pid
+sonar-project.properties
+.npm/
+Jenkinsfile

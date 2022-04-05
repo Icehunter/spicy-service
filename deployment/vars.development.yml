@@ -1,0 +1,5 @@
+# service
+NodeEnv: development
+NodeConfigEnv: development
+# service & bg-common
+HostName: spicy-service.development.spicy.com

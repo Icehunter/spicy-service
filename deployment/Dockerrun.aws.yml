@@ -1,0 +1,25 @@
+ContainerDefinitions:
+  - Name: "{{ ContainerName }}"
+    Image: "{{ ECRImageID }}"
+    Ulimits:
+      - Name: nofile
+        SoftLimit: 4096
+        HardLimit: 4096
+    Cpu: "{{ CPU }}"
+    Memory: "{{ Memory }}"
+    Secrets:
+      - Name: NEW_RELIC_LICENSE_KEY
+        ValueFrom: "{{ NewRelicLicenseKey }}"
+    Environment:
+      - Name: NODE_ENV
+        Value: "{{ NodeEnv }}"
+      - Name: NODE_CONFIG_ENV
+        Value: "{{ NodeConfigEnv }}"
+      - Name: BUILD
+        Value: "{{ Build }}"
+      - Name: CHANGE_BRANCH
+        Value: "{{ ChangeBranch }}"
+      - Name: BRANCH_NAME
+        Value: "{{ BranchName }}"
+    PortMappings:
+    - ContainerPort: "{{ ContainerPort }}"

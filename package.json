@@ -1,0 +1,40 @@
+{
+  "name": "spicy-service",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "ts-node -r tsconfig-paths/register server.js",
+    "start": "cross-env BUILD_ENV=production node server.js",
+    "docker": "docker build -t ui . && docker run -e NODE_ENV=\"development\" -p 3000:3000 -it ui npm start",
+    "lint": "tsc --noEmit && eslint 'src/**/*.{js,ts}'"
+  },
+  "dependencies": {
+    "@hapi/hapi": "^20.2.1",
+    "cross-env": "^7.0.3",
+    "module-alias": "^2.2.2",
+    "ts-node": "^10.7.0",
+    "tsconfig-paths": "^3.9.0"
+  },
+  "devDependencies": {
+    "@icehunter/eslint-config": "^1.2.0",
+    "@types/hapi__hapi": "^20.0.10",
+    "@types/node": "^17.0.23",
+    "husky": "^7.0.4",
+    "lint-staged": "^12.3.7",
+    "rimraf": "3.0.2"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "tsc --noEmit && lint-staged"
+    }
+  },
+  "_moduleAliases": {
+    "~": "lib"
+  },
+  "lint-staged": {
+    "**/*.{ts}": [
+      "eslint --fix",
+      "prettier --write"
+    ]
+  }
+}
